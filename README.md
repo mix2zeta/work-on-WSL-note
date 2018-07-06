@@ -1,20 +1,26 @@
 # work-on-WSL-note
 
-##Set host
-$ docker -H localhost:2375 images
+install/uninstall
+```
+lxrun /install /y
+lxrun /uninstall /full
+```
+update ubuntu version
+```
+sudo do-release-upgrade
+```
 
-If you don't want to type the host every time, you can set up and environment variable called DOCKER_HOST to localhost:2375
+## All Docker thing
 
-$ export DOCKER_HOST=localhost:2375
+### Set dockerhost
 
-Now just running docker images will show the images in your host environment.
+Expose your docker deamon in window docker-ce
+```
+$ echo “export DOCKER_HOST=localhost:2375” >> ~/.bashrc
+```
 
-But, that environment variable will last only as long as the session does. You would have to set it every time you open bash. So, in order to avoid that, you set that variable in a file called .bash_profile in your home directory, like this:
+### docker-compose wrong volumn mount in WSL
 
-$ echo “export DOCKER_HOST=localhost:2375” >> ~/.bash_profile
-
-
-## docker-compose wrong mount in WSL
 sudo vim /etc/wsl.conf
 
 ```
