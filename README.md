@@ -7,7 +7,8 @@ lxrun /uninstall /full
 ```
 update ubuntu version
 ```
-sudo do-release-upgrade
+lsb_release -a
+sudo do-release-upgrade -d
 ```
 
 ## All Docker thing
